@@ -1,3 +1,5 @@
+# Description: This script increments the iterations for a given project in Azure DevOps.
+# It requires to have at least one sprint in the project in the format [Iteration name] > PI 01 > PI 01 Sprint 1
 [CmdletBinding()]
 param (
     [Parameter(Mandatory = $true)]
