@@ -1,5 +1,5 @@
 # This script increments the iterations for a given project in Azure DevOps.
-# It requires to have at least one sprint in the project in the format [Iteration name] > PI 01 > PI 01 Sprint 1
+# It requires to have at least one sprint present in the project in the format [Iteration name] > PI 01 > PI 01 Sprint 1
 # az cli is required to run this script.
 # You can install it from https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 # az devops extension is required to run this script.
