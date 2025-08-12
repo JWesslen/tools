@@ -5,6 +5,8 @@
 # az devops extension is required to run this script.
 # You can install it from https://learn.microsoft.com/en-us/cli/azure/devops/extension?view=azure-cli-latest
 # You need to run az login before running the script.
+# If the login doesn't work automatically, try setting azure devops PAT with the command:
+# $env:AZURE_DEVOPS_EXT_PAT=<your_personal_access_token>
 
 [CmdletBinding()]
 param (
