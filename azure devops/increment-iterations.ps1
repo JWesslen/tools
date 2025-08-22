@@ -66,7 +66,6 @@ for ($i = 0; $i -lt $NumberOfPIs; $i++) {
         $iterationEndDate = $iterationStartDate.AddDays(11)
     }
 
-    $iterationStartDate = $iterationStartDate.AddDays(14)
     $iterationEndDate = $iterationStartDate.AddDays(11)
     
     # Create IP sprint at the end of the PI
