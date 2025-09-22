@@ -33,6 +33,11 @@ foreach ($iteration in $createdIterations.children) {
 # Get team IDs to add iterations for
 $teams = az devops team list --organization $organization --project $ProjectName --output json | ConvertFrom-Json
 
+# output all found teams
+foreach ($team in $teams) {
+    Write-Host "Found team: $($team.name) - $($team.id)" -ForegroundColor Green
+}
+
 # Get IDs for already existing iterations for each team in hash table
 $existingIterationIds = @{}
 foreach ($team in $teams) {
@@ -46,9 +51,10 @@ foreach ($team in $teams) {
 # Add iterations to the teams except the ones already existing
 foreach ($team in $teams) {
     $teamId = $team.id
+    $teamName = $team.name
     $iterationsToAdd = $iterationIds | Where-Object { $existingIterationIds[$teamId] -notcontains $_ }
     foreach ($iterationId in $iterationsToAdd) {
-        Write-Host "Adding iteration $iterationId to team $teamId" -ForegroundColor Yellow
+        Write-Host "Adding iteration $iterationId to team $teamName - $teamId" -ForegroundColor Yellow
         az boards iteration team add --organization $organization --project $ProjectName --team $teamId --id $iterationId
     }
 }

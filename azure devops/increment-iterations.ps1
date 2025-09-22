@@ -28,6 +28,8 @@ $numberOfSprints = 5
 
 # List all iterations
 $iterations = az boards iteration project list --organization $organization --project $ProjectName --depth 4 --output json | ConvertFrom-Json
+Write-Host "FOUND ITERATIONS:"
+Write-Host $iterations
 $latestIterationIndex = $iterations.children.Count - 1
 
 # Get the latest iteration
